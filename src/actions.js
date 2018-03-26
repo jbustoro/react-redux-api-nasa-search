@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-export const SHOW_RESULTS = 'SHOW_RESULTS';
 export const SET_SEARCH_TERM = 'SET_SEARCH_TERM';
+export const SHOW_RESULTS = 'SHOW_RESULTS';
 
 export function setSearchTerm(payload) {
   return {

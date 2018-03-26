@@ -1,21 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
 import App from './App';
-import reducers from './reducers';
-import thunk from 'redux-thunk';
-
-const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
+import store from './store';
 
 ReactDOM.render(
-  <Provider
-    store={createStoreWithMiddleware(
-      reducers,
-      window.__REDUX_DEVTOOLS_EXTENSION__ &&
-        window.__REDUX_DEVTOOLS_EXTENSION__()
-    )}
-  >
+  <Provider store={store}>
     <App />
   </Provider>,
   document.getElementById('root')
