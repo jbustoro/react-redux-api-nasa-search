@@ -9,8 +9,8 @@ body {
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 30s linear;
-  height: 18vh;
+  animation: App-logo-spin infinite 45s linear;
+  height: 20vh;
   margin-top: 2vh;
   margin-bottom: 0.8vh;
 }
@@ -20,7 +20,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 33vh;
+  height: 35vh;
   padding: 2vh;
   color: white;
 }

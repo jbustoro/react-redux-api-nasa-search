@@ -2,12 +2,11 @@ import {
   SET_SEARCH_TERM,
   IMAGES_FETCH_REQUESTED,
   IMAGES_FETCH_SUCCEEDED,
-  IMAGES_FETCH_FAILED
-} from './actions';
-
-export const REQUESTED = 1;
-export const SUCCEEDED = 2;
-export const FAILED = 3;
+  IMAGES_FETCH_FAILED,
+  REQUESTED,
+  SUCCEEDED,
+  FAILED
+} from './constants';
 
 const initialState = {
   searchTerm: '',

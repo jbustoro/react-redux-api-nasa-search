@@ -1,7 +1,9 @@
-export const SET_SEARCH_TERM = 'SET_SEARCH_TERM';
-export const IMAGES_FETCH_REQUESTED = 'IMAGES_FETCH_REQUESTED';
-export const IMAGES_FETCH_SUCCEEDED = 'IMAGES_FETCH_SUCCEEDED';
-export const IMAGES_FETCH_FAILED = 'IMAGES_FETCH_FAILED';
+import {
+  SET_SEARCH_TERM,
+  IMAGES_FETCH_REQUESTED,
+  IMAGES_FETCH_SUCCEEDED,
+  IMAGES_FETCH_FAILED
+} from './constants';
 
 export const setSearchTerm = payload => ({
   type: SET_SEARCH_TERM,

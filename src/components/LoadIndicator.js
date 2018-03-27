@@ -1,5 +1,5 @@
 import React from 'react';
-import { REQUESTED, SUCCEEDED, FAILED } from '../reducers';
+import { REQUESTED, SUCCEEDED, FAILED } from '../constants';
 import Spinner from './Spinner';
 
 const LoadIndicator = props => {
