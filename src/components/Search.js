@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { setSearchTerm, showResults } from '../actions';
 import { Form, FormGroup, FormControl, Button } from 'react-bootstrap';
+import { setSearchTerm, imagesFetchRequest } from '../actions';
 
 class Search extends Component {
-  handleChange(event) {
-    this.props.setSearchTerm(event.currentTarget.value);
+  handleChange(e) {
+    this.props.setSearchTerm(e.currentTarget.value);
   }
 
-  handleClick(event) {
-    event.preventDefault();
-    this.props.showResults(this.props.searchTerm);
+  handleClick(e) {
+    e.preventDefault();
+    this.props.imagesFetchRequest(this.props.searchTerm);
   }
 
   render() {
@@ -20,10 +20,10 @@ class Search extends Component {
           <FormControl
             type="text"
             value={this.props.searchTerm}
-            onChange={event => this.handleChange(event)}
+            onChange={e => this.handleChange(e)}
           />
         </FormGroup>{' '}
-        <Button type="submit" onClick={event => this.handleClick(event)}>
+        <Button type="submit" onClick={e => this.handleClick(e)}>
           Search
         </Button>
       </Form>
@@ -37,7 +37,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   setSearchTerm,
-  showResults
+  imagesFetchRequest
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);
