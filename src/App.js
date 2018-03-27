@@ -1,23 +1,25 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from 'react-redux';
+import logo from './assets/logo.svg';
+import './assets/App.css';
+import store from './store';
 import Search from './components/Search';
 import Result from './components/Result';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <br />
-          <Search />
-        </header>
-        <br />
-        <div className="results">
-          <Result />
+      <Provider store={store}>
+        <div className="App">
+          <header className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+            <Search />
+          </header>
+          <div className="results">
+            <Result />
+          </div>
         </div>
-      </div>
+      </Provider>
     );
   }
 }
