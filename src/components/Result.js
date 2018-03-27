@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { REQUESTED, SUCCEEDED, FAILED } from '../reducers';
+import { REQUESTED, SUCCEEDED, FAILED } from '../constants';
 import LoadIndicator from './LoadIndicator';
 
 const ResultDisplay = props => {
   if (props.results.length) {
-    return props.results.map((result, index) => {
-      return (
-        <img
-          key={index}
-          src={result.links[0].href}
-          alt={result.data[0].title}
-        />
-      );
-    });
+    return props.results.map(
+      ({ links: [{ href }], data: [{ title }] = [] }, index) => {
+        return <img key={index} src={href} alt={title} />;
+      }
+    );
   } else {
     return <h4>No results found.</h4>;
   }
