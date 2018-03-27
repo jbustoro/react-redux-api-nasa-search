@@ -9,15 +9,19 @@ body {
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 120px;
+  animation: App-logo-spin infinite 30s linear;
+  height: 18vh;
+  margin-top: 2vh;
   margin-bottom: 0.8vh;
 }
 
 .App-header {
-  background-color: #222;
-  height: 190px;
-  padding: 20px;
+  background: url('background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 33vh;
+  padding: 2vh;
   color: white;
 }
 
@@ -43,11 +47,6 @@ body {
 }
 
 .results img {
-  height: 40vh;
+  height: 45vh;
   margin: 1vh;
-}
-
-.loader {
-  margin-top: 1vh;
-  margin-left: 5vh;
 }
