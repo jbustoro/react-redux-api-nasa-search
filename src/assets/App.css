@@ -11,6 +11,7 @@ body {
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 120px;
+  margin-bottom: 0.8vh;
 }
 
 .App-header {
@@ -37,7 +38,16 @@ body {
   }
 }
 
+.results {
+  margin: 1vh;
+}
+
 .results img {
   height: 40vh;
   margin: 1vh;
+}
+
+.loader {
+  margin-top: 1vh;
+  margin-left: 5vh;
 }
