@@ -1,7 +1,5 @@
-export const fetchResults = searchTerm => {
-  return fetch(
-    `https://images-api.nasa.gov/search?q=${searchTerm}&media_type=image`
-  )
+export const fetchResults = query => {
+  return fetch(`https://images-api.nasa.gov/search?q=${query}&media_type=image`)
     .then(response => {
       return response.json();
     })

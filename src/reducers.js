@@ -1,12 +1,4 @@
-import {
-  SET_SEARCH_TERM,
-  IMAGES_FETCH_REQUESTED,
-  IMAGES_FETCH_SUCCEEDED,
-  IMAGES_FETCH_FAILED,
-  REQUESTED,
-  SUCCEEDED,
-  FAILED
-} from './constants';
+import * as constants from './constants';
 
 const initialState = {
   searchTerm: '',
@@ -17,14 +9,22 @@ const initialState = {
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SET_SEARCH_TERM:
+    case constants.SET_SEARCH_TERM:
       return { ...state, searchTerm: action.payload };
-    case IMAGES_FETCH_REQUESTED:
-      return { ...state, fetchState: REQUESTED };
-    case IMAGES_FETCH_SUCCEEDED:
-      return { ...state, results: action.payload, fetchState: SUCCEEDED };
-    case IMAGES_FETCH_FAILED:
-      return { ...state, errorMessage: action.payload, fetchState: FAILED };
+    case constants.IMAGES_FETCH_REQUESTED:
+      return { ...state, fetchState: constants.REQUESTED };
+    case constants.IMAGES_FETCH_SUCCEEDED:
+      return {
+        ...state,
+        results: action.payload,
+        fetchState: constants.SUCCEEDED
+      };
+    case constants.IMAGES_FETCH_FAILED:
+      return {
+        ...state,
+        errorMessage: action.payload,
+        fetchState: constants.FAILED
+      };
     default:
       return state;
   }

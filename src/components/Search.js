@@ -2,6 +2,16 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Form, FormGroup, FormControl, Button } from 'react-bootstrap';
 import { setSearchTerm, imagesFetchRequest } from '../actions';
+import { searchTermSelector } from '../selectors';
+
+const mapStateToProps = state => ({
+  searchTerm: searchTermSelector(state)
+});
+
+const mapDispatchToProps = {
+  setSearchTerm,
+  imagesFetchRequest
+};
 
 class Search extends Component {
   handleChange(e) {
@@ -30,14 +40,5 @@ class Search extends Component {
     );
   }
 }
-
-const mapStateToProps = state => ({
-  searchTerm: state.searchTerm
-});
-
-const mapDispatchToProps = {
-  setSearchTerm,
-  imagesFetchRequest
-};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);

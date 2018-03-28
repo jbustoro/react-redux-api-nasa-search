@@ -2,6 +2,17 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { REQUESTED, SUCCEEDED, FAILED } from '../constants';
 import LoadIndicator from './LoadIndicator';
+import {
+  resultsSelector,
+  fetchStateSelector,
+  errorMessageSelector
+} from '../selectors';
+
+const mapStateToProps = state => ({
+  results: resultsSelector(state),
+  fetchState: fetchStateSelector(state),
+  errorMessage: errorMessageSelector(state)
+});
 
 const ResultDisplay = props => {
   if (props.results.length) {
@@ -26,11 +37,5 @@ class Result extends Component {
     );
   }
 }
-
-const mapStateToProps = state => ({
-  results: state.results,
-  fetchState: state.fetchState,
-  errorMessage: state.errorMessage
-});
 
 export default connect(mapStateToProps)(Result);
