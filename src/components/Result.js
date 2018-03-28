@@ -2,16 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { REQUESTED, SUCCEEDED, FAILED } from '../constants';
 import LoadIndicator from './LoadIndicator';
-import {
-  resultsSelector,
-  fetchStateSelector,
-  errorMessageSelector
-} from '../selectors';
+import * as selectors from '../selectors';
 
 const mapStateToProps = state => ({
-  results: resultsSelector(state),
-  fetchState: fetchStateSelector(state),
-  errorMessage: errorMessageSelector(state)
+  results: selectors.resultsSelector(state),
+  fetchState: selectors.fetchStateSelector(state),
+  errorMessage: selectors.errorMessageSelector(state)
 });
 
 const ResultDisplay = props => {

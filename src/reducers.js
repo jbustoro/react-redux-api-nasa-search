@@ -1,30 +1,29 @@
+import { Record } from 'immutable';
 import * as constants from './constants';
 
-const initialState = {
+const initialState = Record({
   searchTerm: '',
   fetchState: '',
   errorMessage: '',
   results: []
-};
+});
 
-const rootReducer = (state = initialState, action) => {
+const defaultState = new initialState();
+
+const rootReducer = (state = defaultState, action) => {
   switch (action.type) {
     case constants.SET_SEARCH_TERM:
-      return { ...state, searchTerm: action.payload };
+      return state.set('searchTerm', action.payload);
     case constants.IMAGES_FETCH_REQUESTED:
-      return { ...state, fetchState: constants.REQUESTED };
+      return state.set('fetchState', constants.REQUESTED);
     case constants.IMAGES_FETCH_SUCCEEDED:
-      return {
-        ...state,
-        results: action.payload,
-        fetchState: constants.SUCCEEDED
-      };
+      return state
+        .set('results', action.payload)
+        .set('fetchState', constants.SUCCEEDED);
     case constants.IMAGES_FETCH_FAILED:
-      return {
-        ...state,
-        errorMessage: action.payload,
-        fetchState: constants.FAILED
-      };
+      return state
+        .set('errorMessage', action.payload)
+        .set('fetchState', constants.FAILED);
     default:
       return state;
   }
